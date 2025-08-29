@@ -1,0 +1,222 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: rgba(30, 32, 38, 0.7);
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.45);
+  backdrop-filter: blur(12px);
+  min-height: 100vh;
+  transition: background 0.7s cubic-bezier(0.4,0,0.2,1);
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #18181b 0%, #23272f 100%);
+  min-height: 100vh;
+  color: #e5e7eb;
+  transition: background 0.7s cubic-bezier(0.4,0,0.2,1);
+}
+
+section {
+  margin-bottom: 2.5rem;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInUp 1s forwards;
+}
+
+section:nth-child(1) { animation-delay: 0.1s; }
+section:nth-child(2) { animation-delay: 0.2s; }
+section:nth-child(3) { animation-delay: 0.3s; }
+section:nth-child(4) { animation-delay: 0.4s; }
+section:nth-child(5) { animation-delay: 0.5s; }
+section:nth-child(6) { animation-delay: 0.6s; }
+section:nth-child(7) { animation-delay: 0.7s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+h1, h2, h3 {
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  font-weight: 800;
+  color: #a5b4fc;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 16px #000a;
+}
+
+h2 {
+  color: #60a5fa;
+  margin-bottom: 1rem;
+}
+
+a {
+  color: #38bdf8;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+a:hover {
+  color: #f472b6;
+  text-shadow: 0 0 8px #f472b6aa;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background: #23272f;
+}
+::-webkit-scrollbar-thumb {
+  background: #18181b;
+  border-radius: 4px;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 0.5rem;
+  }
+}
+
+body.light-theme {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  color: #23272f;
+  transition: background 0.7s cubic-bezier(0.4,0,0.2,1), color 0.7s cubic-bezier(0.4,0,0.2,1);
+}
+
+body.light-theme .container {
+  background: rgba(255,255,255,0.8);
+  color: #23272f;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+}
+
+/* Use very light cyan for cards/sections in light mode */
+body.light-theme section, body.light-theme .card, body.light-theme .projectCard, body.light-theme .jobCard, body.light-theme .schoolCard {
+  background: #ecfeff !important; /* cyan-50 */
+  color: #23272f !important;
+  border: 1px solid #bae6fd !important; /* light cyan border */
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06) !important;
+}
+
+body.light-theme h1, body.light-theme h2, body.light-theme h3 {
+  color: #2563eb !important;
+  text-shadow: none !important;
+}
+
+body.light-theme a {
+  color: #2563eb;
+}
+body.light-theme a:hover {
+  color: #f472b6;
+  text-shadow: 0 0 8px #f472b6aa;
+}
+
+body.light-theme .sidebar, body.light-theme aside {
+  background: rgba(245,245,255,0.95) !important;
+  color: #23272f !important;
+  border-right: 1px solid #e0e7ef !important;
+}
+
+body.light-theme nav {
+  background: rgba(245,245,255,0.95) !important;
+  border-bottom: 1px solid #e0e7ef !important;
+}
+
+body.light-theme .fab {
+  background: linear-gradient(135deg, #2563eb 0%, #f472b6 100%) !important;
+  color: #fff !important;
+}
+
+/* Contact rows also use light cyan */
+body.light-theme .contact-row {
+  background: #ecfeff !important;
+  border: 1px solid #bae6fd !important;
+}
+body.light-theme .left-label {
+  color: #111827 !important;
+}
+body.light-theme .contact-row a {
+  color: #2563eb !important;
+}
+
+/* Force inner cards to white in light mode */
+body.light-theme .aboutCard,
+body.light-theme .jobCard,
+body.light-theme .projectCard,
+body.light-theme .schoolCard,
+body.light-theme .contact-row {
+  background: #ffffff !important;
+  border: 1px solid #e5e7eb !important;
+}
+body.light-theme .about-detail { color: #111827 !important; }
+
+/* Inner cards white on cyan outer in light mode */
+body.light-theme .aboutCard,
+body.light-theme .jobCard,
+body.light-theme .projectCard,
+body.light-theme .schoolCard {
+  background: #ffffff !important;
+  border: 1px solid #e5e7eb !important;
+}
+
+/* Make inner card text dark in light mode */
+body.light-theme .jobCard,
+body.light-theme .jobCard div,
+body.light-theme .jobCard li,
+body.light-theme .projectCard,
+body.light-theme .projectCard div,
+body.light-theme .projectCard li,
+body.light-theme .aboutCard,
+body.light-theme .aboutCard div,
+body.light-theme .aboutCard li,
+body.light-theme .schoolCard,
+body.light-theme .schoolCard div,
+body.light-theme .schoolCard li {
+  color: #111827 !important;
+}
+/* Keep links blue in light mode */
+body.light-theme a { color: #2563eb !important; }
