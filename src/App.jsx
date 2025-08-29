@@ -45,13 +45,15 @@ function App() {
   const [resume, setResume] = useState(null);
   const [currentSection, setCurrentSection] = useState('about');
 
+  const BASE = import.meta.env.BASE_URL || '/';
+
   useEffect(() => {
     // Default to light theme
     document.body.classList.add('light-theme');
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:5050/api/resume")
+    fetch(`${BASE}resume.json`)
       .then((res) => res.json())
       .then(setResume);
   }, []);
@@ -62,7 +64,7 @@ function App() {
     <>
       <Navbar currentSection={currentSection} setCurrentSection={setCurrentSection} />
       <div className="container" style={{minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start'}}>
-        <Hero name={resume.name} imageUrl="http://localhost:5050/public/profile.jpg" contact={resume.contact} tagline="Turning ideas into code, and code into impact." funFacts={resume.funFacts} badges={resume.badges} />
+        <Hero name={resume.name} imageUrl={`${BASE}profile.jpg`} contact={resume.contact} tagline="Turning ideas into code, and code into impact." funFacts={resume.funFacts} badges={resume.badges} />
         <div style={{marginTop: '2.5rem', flex: 1, animation: 'fadeInUp 0.7s'}}>
           {getSectionComponent(currentSection, resume)}
         </div>

@@ -1,0 +1,148 @@
+{
+  "name": "Anil Muthigi",
+  "contact": {
+    "location": "Champaign, IL, United States",
+    "email": "anilmuthigi123@gmail.com",
+    "phone": "+1-217-305-2309",
+    "linkedin": "https://www.linkedin.com/in/anil-muthigi-06aaa7198/",
+    "github": "https://github.com/muthigi2"
+  },
+  "summary": "👋 Hi, I'm Anil! I'm a passionate software engineer and AI enthusiast, currently pursuing my Masters in CS at UIUC. I love building things that make life easier, smarter, and more fun. When I'm not coding, you'll find me exploring new tech, competing in programming contests, or collaborating on open-source projects.",
+  "funFacts": [
+    "🍣 Favorite cuisine: Japanese",
+    "🌍 Traveled to 7 countries and counting",
+    "🤖 Built AI that reads cheques, predicts words, and censors images",
+    "🎵 Enjoys lo-fi beats and late-night hackathons"
+  ],
+  "education": [
+    {
+      "school": "University of Illinois Urbana-Champaign",
+      "degree": "Masters in Computer Science",
+      "dates": "Jan 2025 – May 2026",
+      "icon": "🎓"
+    },
+    {
+      "school": "Birla Institute of Technology, Mesra",
+      "degree": "Bachelor of Technology in Computer Science",
+      "dates": "July 2019 – May 2023",
+      "gpa": "8.94",
+      "icon": "🏫"
+    }
+  ],
+  "experience": [
+    {
+      "title": "Software Engineering Intern",
+      "company": "Salesforce",
+      "location": "San Francisco, CA",
+      "dates": "Jun 2025 – Aug 2025",
+      "icon": "💼",
+      "bullets": [
+        "🏗️ Designed and deployed a production-grade Elasticsearch cluster using Kubernetes StatefulSets and Helm, replacing AWS OpenSearch as the visibility backend for Temporal.",
+        "🔧 Built a modular CI/CD pipeline using Falcon and Strata to independently manage master, data, and coordinator node lifecycles across functional domains and environments.",
+        "🔐 Designed and integrated secure configuration via Vault and service discovery through headless services and LoadBalancer endpoints, enabling robust, scalable observability infrastructure."
+      ]
+    },
+    {
+      "title": "Software Engineer",
+      "company": "Salesforce",
+      "location": "Bengaluru, India",
+      "dates": "Oct 2023 – Jan 2025",
+      "icon": "💼",
+      "bullets": [
+        "⚙️ Created new real-time Spark publishers to read insight Kafka topics and process user insights, pushing to downstream systems in batch.",
+        "🛡️ Designed the system to be fault tolerant with retry queues, rate-limited retry queues, and dead-letter queues, alongside slow data-processing Spark apps and cron jobs.",
+        "🧭 Built and delivered the Find Past Collaborators Copilot action end-to-end to surface prior coworker interactions for better product preference understanding.",
+        "🤖 Built AI agents powered by an Invocable Action Framework enabling LLMs to help Sales Representatives close Sales Plan deals (showcased by Salesforce)."
+      ]
+    },
+    {
+      "title": "Software Engineering Intern",
+      "company": "Salesforce",
+      "location": "Bengaluru, India",
+      "dates": "Feb 2023 – Jul 2023",
+      "icon": "💼",
+      "bullets": [
+        "🔁 Migrated the aggregator component of Cipher from batch processing to streaming via Apache Flink.",
+        "🧩 Optimized operator parallelisms for application stability on Dev and Mon‑s clusters during peak load.",
+        "⚡ Achieved ~8M metrics/min with ~10s end‑to‑end latency (down from ~10 minutes)."
+      ]
+    },
+    {
+      "title": "Software Engineering Intern",
+      "company": "Goldman Sachs",
+      "location": "Bengaluru, India",
+      "dates": "May 2022 – Jul 2022",
+      "icon": "💰",
+      "bullets": [
+        "🧪 Performed load testing and Java profiling for the Aggregator codebase ingesting logs into Google BigQuery.",
+        "🛠️ Identified bottlenecks and optimized the Aggregator’s codebase to minimize Kubernetes resource usage."
+      ]
+    },
+    {
+      "title": "Blockchain Developer Intern",
+      "company": "Instadapp",
+      "dates": "Feb 2022 – Mar 2022",
+      "icon": "🔗",
+      "bullets": [
+        "🔍 Created middleware to interact with and fetch details from the Uniswap protocol.",
+        "📈 Deployed subgraphs to fetch details of Instadapp’s Digital Smart Accounts across networks; aggregated investment data using JavaScript and TheGraph."
+      ]
+    },
+    {
+      "title": "Software Engineering Intern",
+      "company": "Crio.do",
+      "dates": "Oct 2021 – Jan 2022",
+      "icon": "🧑‍💻",
+      "bullets": [
+        "🧰 Worked with GitLab, Jenkins, and Google Cloud Platform to implement JUnit-based assessments for the platform.",
+        "🐍 Automated and simplified problem creation and testing by writing Python scripts to streamline flows."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "Low-Latency Messaging System",
+      "tech": "C++, Boost.Asio/Beast, Docker, React",
+      "icon": "📨",
+      "desc": "Lock-free C++ engine with shared-memory ring buffer; async HTTP/WebSocket server; React UI.",
+      "link": "https://messaging-system-frontend.onrender.com/"
+    },
+    {
+      "title": "Automated Cheque Processing",
+      "tech": "Python, Deep Learning",
+      "icon": "🤖",
+      "desc": "AI-powered system to extract and verify cheque details for banks. Published in Springer.",
+      "link": "https://github.com/anilmuthigi/Automated-Cheque-Processing"
+    },
+    {
+      "title": "GAN-based Content Censorship",
+      "tech": "Python, GANs",
+      "icon": "🖼️",
+      "desc": "GAN that intelligently censors and inpaints explicit content in images.",
+      "link": "https://github.com/anilmuthigi/Visual-Attention-Detector"
+    },
+    {
+      "title": "Literary Text Oracle",
+      "tech": "Python, TensorFlow",
+      "icon": "📚",
+      "desc": "LSTM-based model for next-token prediction in literary texts.",
+      "link": "https://github.com/anilmuthigi/Predicting-next-word"
+    }
+  ],
+  "achievements": [
+    "🏅 Codeforces: Max Rating - 1827 (Expert)",
+    "🌟 Codechef: Max Rating - 1925 (4 star)",
+    "🥇 Google Kickstart: Global rank 328 (8,100+ participants)",
+    "🥈 Google Hashcode: India Rank 181 (10,700+ participants)",
+    "🏆 ACM ICPC Regionals '21: Rank 106 (5,000+ teams)"
+  ],
+  "positions": [
+    "👨‍💼 Vice President, ACM BIT Mesra (2022 - 2023)"
+  ],
+  "badges": [
+    "AI Enthusiast 🤖",
+    "Open Source Contributor 🌍",
+    "Competitive Programmer 🏆",
+    "Cloud Native ☁️"
+  ]
+} 
