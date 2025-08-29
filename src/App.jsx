@@ -53,7 +53,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    fetch(`${BASE}resume.json`)
+    fetch(`resume.json`)
       .then((res) => res.json())
       .then(setResume);
   }, []);
@@ -64,7 +64,7 @@ function App() {
     <>
       <Navbar currentSection={currentSection} setCurrentSection={setCurrentSection} />
       <div className="container" style={{minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start'}}>
-        <Hero name={resume.name} imageUrl={`${BASE}profile.jpg`} contact={resume.contact} tagline="Turning ideas into code, and code into impact." funFacts={resume.funFacts} badges={resume.badges} />
+        <Hero name={resume.name} imageUrl={`profile.jpg`} contact={resume.contact} tagline="Turning ideas into code, and code into impact." funFacts={resume.funFacts} badges={resume.badges} />
         <div style={{marginTop: '2.5rem', flex: 1, animation: 'fadeInUp 0.7s'}}>
           {getSectionComponent(currentSection, resume)}
         </div>
