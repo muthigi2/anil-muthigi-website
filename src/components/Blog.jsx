@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const blogSection = {
   marginBottom: '2.5rem',
@@ -33,41 +33,53 @@ const cardStyle = {
 
 const posts = [
   {
+    id: 'cacheblend-kv-cache-rag',
+    title: "CacheBlend: Smarter KV Cache Reuse for Fast and Accurate RAG",
+    date: "2025-09-02",
+    summary: "When we talk about serving large language models (LLMs) efficiently, one name that always comes up is vLLM.",
+  },
+  {
     id: 'temporal-salesforce-streaming',
     title: "Scaling Event-Driven Systems with Temporal at Salesforce",
     date: "2024-12-10",
     summary: "How Temporal helps build resilient, observable workflows for data pipelines and AI-driven features.",
-    content: `Temporal is an open source workflow orchestration platform that lets you write durable, long-running workflows in code.
-At Salesforce, we needed fault-tolerant orchestration for data pipelines and Copilot actions. Temporal gave us:
-- Durable retries with backoff for flaky downstream services
-- Clear separation of concerns between activities and workflows
-- Great observability into workflow history for debugging
-We used Temporal to coordinate Kafka → Flink → Spark pipelines, with workflow steps for validation, enrichment, and downstream fanout. For Copilot actions, Temporal helped sequence model prompts, human-in-the-loop approvals, and final delivery.
-Key takeaway: Temporal's 'code as state machine' model beats cron+queues for complex, stateful tasks.`,
   },
   {
     id: 'competitive-programming-mindset',
     title: "What Competitive Programming Taught Me About Engineering",
     date: "2024-04-15",
     summary: "From Codeforces to real-world systems: patterns, edge cases, and iterative improvement.",
-    content: `Competitive programming trains sharp instincts for constraints, edge cases, and fast iteration.
-On the job, the same skills help design efficient systems, reason about bottlenecks, and simplify complex logic.
-Three habits that stuck with me:
-1) Model first, code second; 2) Name invariants and test them; 3) Prefer clear O() over clever hacks.`,
   },
   {
     id: 'dev-setup',
     title: "My Developer Setup: Tools I Actually Use",
     date: "2024-03-20",
     summary: "An honest list of tools that improve my day-to-day developer experience.",
-    content: `A minimal setup that scales with projects: VS Code + sensible extensions, a few shell aliases, Docker for parity, and a makefile for repeatable tasks.
-Bonus: Git hooks for lint/test, and a lightweight docs site for team onboarding.`,
   }
 ];
 
+const contentLoaders = {
+  'cacheblend-kv-cache-rag': () => import('../blogs/cacheblend.js').then(m => m.default),
+  'temporal-salesforce-streaming': () => import('../blogs/temporal-salesforce-streaming.js').then(m => m.default),
+  'competitive-programming-mindset': () => import('../blogs/competitive-programming-mindset.js').then(m => m.default),
+  'dev-setup': () => import('../blogs/dev-setup.js').then(m => m.default),
+};
+
 export default function Blog() {
   const [openPostId, setOpenPostId] = useState(null);
+  const [postContent, setPostContent] = useState('');
   const openPost = posts.find(p => p.id === openPostId);
+
+  useEffect(() => {
+    if (!openPostId) {
+      setPostContent('');
+      return;
+    }
+    const loader = contentLoaders[openPostId];
+    if (loader) {
+      loader().then((content) => setPostContent(content));
+    }
+  }, [openPostId]);
 
   if (openPost) {
     return (
@@ -75,7 +87,7 @@ export default function Blog() {
         <div className="aboutCard" style={{background:'rgba(24, 24, 27, 0.92)', border:'1px solid #23272f', borderRadius:'1rem', padding:'1.2rem'}}>
           <h2 style={titleStyle}>{openPost.title}</h2>
           <div style={{color:'#60a5fa', marginBottom:'0.8rem'}}>{openPost.date}</div>
-          <div style={{whiteSpace:'pre-wrap', lineHeight:1.7}}>{openPost.content}</div>
+          <div style={{whiteSpace:'pre-wrap', lineHeight:1.7}}>{postContent || 'Loading...'}</div>
           <div style={{marginTop:'1.5rem'}}>
             <button onClick={() => setOpenPostId(null)} style={{background:'#23272f', color:'#e5e7eb', border:'1px solid #333', borderRadius:8, padding:'0.6rem 1rem', cursor:'pointer'}}>← Back to posts</button>
           </div>
