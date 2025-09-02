@@ -116,4 +116,6 @@ For RAG, that’s a game-changer. It means answers arrive faster, GPUs handle mo
 
 Sometimes the best optimizations come from realizing you don’t need to do everything — just the parts that actually matter.
 
-[placeholder: final end-to-end diagram — query + retrieved chunks → cache lookup → selective recompute → pipeline → fast generation]`;export{e as default};
+[placeholder: final end-to-end diagram — query + retrieved chunks → cache lookup → selective recompute → pipeline → fast generation]
+
+References: arXiv:2405.16444 [cs.LG]`;export{e as default};
