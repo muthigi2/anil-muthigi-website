@@ -4,7 +4,6 @@ import About from "./components/About";
 import Education from "./components/Education";
 import Experience from "./components/Experience";
 import Projects from "./components/Projects";
-import Achievements from "./components/Achievements";
 import Contact from "./components/Contact";
 import Navbar from "./components/Navbar";
 import Blog from "./components/Blog";
@@ -16,7 +15,6 @@ const sectionIds = [
   'experience',
   'projects',
   'blog',
-  'achievements',
   'contact',
 ];
 
@@ -32,8 +30,6 @@ function getSectionComponent(section, resume) {
       return <Projects projects={resume.projects} />;
     case 'blog':
       return <Blog />;
-    case 'achievements':
-      return <Achievements achievements={resume.achievements} />;
     case 'contact':
       return <Contact contact={resume.contact} />;
     default:

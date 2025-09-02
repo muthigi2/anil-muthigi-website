@@ -28,7 +28,6 @@ const rowStyle = {
   padding: '0.8rem 1rem'
 };
 const leftStyle = { display: 'flex', alignItems: 'center', gap: '0.7rem', color: '#a5b4fc', fontWeight: 600 };
-const iconStyle = { fontSize: '1.2rem' };
 const linkStyle = { color: '#38bdf8', textDecoration: 'underline', fontWeight: 600 };
 
 export default function Contact({ contact }) {
@@ -37,19 +36,19 @@ export default function Contact({ contact }) {
       <h2 style={titleStyle}>Contact</h2>
       <div style={listStyle}>
         <div className="contact-row" style={rowStyle}>
-          <div className="left-label" style={leftStyle}><span style={iconStyle}>📱</span><span>Cell</span></div>
+          <div className="left-label" style={leftStyle}><span>Cell</span></div>
           <a style={linkStyle} href={`tel:${contact.phone}`} aria-label="Call mobile">{contact.phone}</a>
         </div>
         <div className="contact-row" style={rowStyle}>
-          <div className="left-label" style={leftStyle}><span style={iconStyle}>✉️</span><span>Email</span></div>
+          <div className="left-label" style={leftStyle}><span>Email</span></div>
           <a style={linkStyle} href={`mailto:${contact.email}`} aria-label="Send email">{contact.email}</a>
         </div>
         <div className="contact-row" style={rowStyle}>
-          <div className="left-label" style={leftStyle}><span style={iconStyle}>💼</span><span>LinkedIn</span></div>
+          <div className="left-label" style={leftStyle}><span>LinkedIn</span></div>
           <a style={linkStyle} href={contact.linkedin} target="_blank" rel="noopener noreferrer" aria-label="Open LinkedIn">View</a>
         </div>
         <div className="contact-row" style={rowStyle}>
-          <div className="left-label" style={leftStyle}><span style={iconStyle}>📷</span><span>Instagram</span></div>
+          <div className="left-label" style={leftStyle}><span>Instagram</span></div>
           <a style={linkStyle} href="https://www.instagram.com/anilmuthigi/" target="_blank" rel="noopener noreferrer" aria-label="Open Instagram">@anilmuthigi</a>
         </div>
       </div>

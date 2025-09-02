@@ -4,7 +4,9 @@ const navStyle = {
   position: 'sticky',
   top: 0,
   zIndex: 100,
-  width: '100%',
+  width: '900px',
+  maxWidth: '900px',
+  margin: '0 auto',
   background: 'rgba(24, 24, 27, 0.85)',
   backdropFilter: 'blur(12px)',
   boxShadow: '0 2px 16px rgba(0,0,0,0.25)',
@@ -16,10 +18,12 @@ const navStyle = {
 };
 const ulStyle = {
   display: 'flex',
-  gap: '2.0rem',
+  gap: '1.6rem',
   listStyle: 'none',
   margin: 0,
   padding: 0,
+  flex: 1,
+  justifyContent: 'center',
 };
 const linkStyle = {
   color: '#a5b4fc',
@@ -31,6 +35,7 @@ const linkStyle = {
   cursor: 'pointer',
   padding: '0.2rem 0.5rem',
   borderRadius: '0.3rem',
+  whiteSpace: 'nowrap',
 };
 const activeLinkStyle = {
   ...linkStyle,
@@ -44,7 +49,6 @@ const sections = [
   { id: 'experience', label: 'Experience' },
   { id: 'projects', label: 'Projects' },
   { id: 'blog', label: 'Blog' },
-  { id: 'achievements', label: 'Achievements' },
   { id: 'contact', label: 'Contact' },
 ];
 

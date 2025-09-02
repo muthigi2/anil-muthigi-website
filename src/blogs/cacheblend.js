@@ -1,4 +1,4 @@
-const content = `CacheBlend: Smarter KV Cache Reuse for Fast and Accurate RAG
+const content = `This blog is adapted from a presentation I gave in my CS 598: Hot Topics in Data Management class at UIUC, where I dove into the CacheBlend paper — a fascinating approach to reducing time-to-first-token in RAG systems by rethinking KV cache reuse.
 
 When we talk about serving large language models (LLMs) efficiently, one name that always comes up is vLLM. It’s an engine built on the idea that GPUs are precious and memory should never go to waste. But when I started looking at how RAG (retrieval-augmented generation) workloads behave, I realized that memory wasn’t the only bottleneck. Time-to-first-token (TTFT) — the delay before you see the first generated word — can be just as painful. And the culprit is often something hiding in plain sight: the KV cache.
 
