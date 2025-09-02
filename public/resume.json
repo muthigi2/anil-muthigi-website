@@ -113,21 +113,14 @@
       "tech": "Python, Deep Learning",
       "icon": "🤖",
       "desc": "AI-powered system to extract and verify cheque details for banks. Published in Springer.",
-      "link": "https://github.com/anilmuthigi/Automated-Cheque-Processing"
+      "link": "https://github.com/anilmuthigi/Automated-Cheque-Verification"
     },
     {
       "title": "GAN-based Content Censorship",
       "tech": "Python, GANs",
       "icon": "🖼️",
       "desc": "GAN that intelligently censors and inpaints explicit content in images.",
-      "link": "https://github.com/anilmuthigi/Visual-Attention-Detector"
-    },
-    {
-      "title": "Literary Text Oracle",
-      "tech": "Python, TensorFlow",
-      "icon": "📚",
-      "desc": "LSTM-based model for next-token prediction in literary texts.",
-      "link": "https://github.com/anilmuthigi/Predicting-next-word"
+      "link": "https://github.com/anilmuthigi/Content-Moderation"
     }
   ],
   "achievements": [
