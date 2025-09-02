@@ -19,13 +19,14 @@
       "school": "University of Illinois Urbana-Champaign",
       "degree": "Masters in Computer Science",
       "dates": "Jan 2025 – May 2026",
+      "gpa": "4.0/4.0",
       "icon": "🎓"
     },
     {
       "school": "Birla Institute of Technology, Mesra",
       "degree": "Bachelor of Technology in Computer Science",
       "dates": "July 2019 – May 2023",
-      "gpa": "8.94",
+      "gpa": "8.94/10",
       "icon": "🏫"
     }
   ],
