@@ -210,7 +210,11 @@ export default function Blog() {
         // Unknown placeholder -> skip
         continue;
       }
-      elements.push(<p key={`p-${i}`} style={{margin:'0.3rem 0'}}>{line}</p>);
+      if (lower.startsWith('references:')) {
+        elements.push(<p key={`ref-${i}`} style={{margin:'0.3rem 0', fontStyle:'italic'}}>{line}</p>);
+      } else {
+        elements.push(<p key={`p-${i}`} style={{margin:'0.3rem 0'}}>{line}</p>);
+      }
     }
     return elements;
   }
