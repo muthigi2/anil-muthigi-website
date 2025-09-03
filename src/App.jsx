@@ -42,6 +42,7 @@ function App() {
   const [currentSection, setCurrentSection] = useState('about');
 
   const BASE = import.meta.env.BASE_URL || '/';
+  const VISIT_ENDPOINT = import.meta.env.VITE_VISIT_ENDPOINT || 'https://formspree.io/f/mzzajwqz';
 
   useEffect(() => {
     // Default to light theme
@@ -53,6 +54,24 @@ function App() {
       .then((res) => res.json())
       .then(setResume);
   }, []);
+
+  // One-time per-session visit ping to Formspree/email endpoint (if configured)
+  useEffect(() => {
+    if (!VISIT_ENDPOINT) return;
+    if (sessionStorage.getItem('visitPinged')) return;
+    sessionStorage.setItem('visitPinged', '1');
+    try {
+      const formData = new FormData();
+      formData.append('subject', 'New visit');
+      formData.append('path', window.location.pathname);
+      formData.append('userAgent', navigator.userAgent || '');
+      formData.append('referrer', document.referrer || '');
+      formData.append('timestamp', new Date().toISOString());
+      fetch(VISIT_ENDPOINT, { method: 'POST', body: formData }).catch(() => {});
+    } catch (_) {
+      // no-op
+    }
+  }, [VISIT_ENDPOINT]);
 
   if (!resume) return <div>Loading...</div>;
 
